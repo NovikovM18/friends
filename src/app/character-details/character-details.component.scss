@@ -4,19 +4,40 @@
   justify-content: center;
   align-items: center;
   &__row {
+    margin: 1rem 0 0 0;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.2rem;
     &_title {
+      margin: 0;
       text-transform: uppercase;
       font-size: 1.2rem;
       letter-spacing: 2px;
     }
+    &_p {
+      margin: 0;
+    }
   }
+  
   &__photo {
+    margin: 1rem 0 0 0;
     width: 320px;
     height: 480px;
     object-fit: cover;
     
+  }
+}
+
+.arr {
+  display: flex;
+  flex-direction: column;
+}
+
+.activeP {
+  transition: 200ms;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.08);
+    transition: 200ms;
   }
 }

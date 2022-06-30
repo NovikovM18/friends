@@ -2,7 +2,7 @@
   <div 
     *ngFor="let character of characters"
     class="item"
-    [routerLink]="['/characters', character._id]"
+    [routerLink]="['/characters', character.nameCharacter]"
   >
     <img 
       [src]=getSantizeUrl(character.image) 

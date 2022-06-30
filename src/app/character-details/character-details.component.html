@@ -2,9 +2,9 @@
 *ngIf="character"
 class="character"
 >
-  <span class="character__row">
+  <div class="character__row">
     <p class="character__row_title">{{ character.nameCharacter }}</p>
-  </span>
+  </div>
 
   <img 
     [src]=getSantizeUrl(character.image) 
@@ -12,39 +12,88 @@ class="character"
     class="character__photo"
   >
 
-  <span class="character__row" *ngIf="character.alias !== ' ' && character.alias !== ''">
+  <div 
+    *ngIf="character.alias !== ' ' && character.alias !== ''"
+    class="character__row" 
+  >
     <p class="character__row_title">alias:</p>
-    <p>{{ character.alias}}</p>
-  </span>
+    <p class="character__row_p">{{ character.alias}}</p>
+  </div>
 
-  <span class="character__row" *ngIf="character.profession.length">
+  <div 
+    *ngIf="character.profession.length"
+    class="character__row arr" 
+  >
     <p class="character__row_title">profession:</p>
-    <p>{{ character.profession.join(', ') }}</p>
-  </span>
 
-  <span class="character__row" *ngIf="character.couples.length">
+    <div
+      *ngFor="let profession of character.profession"
+    >
+      <p class="character__row_p">{{ profession }}</p>
+    </div>
+  </div>
+
+  <div 
+    *ngIf="character.couples.length"
+    class="character__row arr" 
+  >
     <p class="character__row_title">couples:</p>
-    <p>{{ character.couples.join(', ') }}</p>
-  </span>
+    <div 
+      *ngFor="let couples of character.couples"
+      (click)="setCharacter(couples)"
+      >
+      <p class="character__row_p activeP">{{ couples }}</p>
+    </div>
+  </div>
 
-  <span class="character__row" *ngIf="character.spouse !== ' ' && character.spouse !== ''">
+  <div 
+    *ngIf="character.spouse !== ' ' && character.spouse !== ''"
+    class="character__row" 
+    [routerLink]="['/characters', character.spouse]"
+    (click)="setCharacter(character.spouse)"
+  >
     <p class="character__row_title">spouse:</p>
-    <p>{{ character.spouse }}</p>
-  </span>
+    <p class="character__row_p activeP">{{ character.spouse }}</p>
+  </div>
   
-  <span class="character__row" *ngIf="character.children.length">
+  <div 
+    *ngIf="character.children.length"
+    class="character__row arr"
+  >
     <p class="character__row_title">children:</p>
-    <p>{{ character.children.join(', ') }}</p>
-  </span>
+    <div 
+      *ngFor="let children of character.children"
+      [routerLink]="['/characters', children]"
+      (click)="setCharacter(children)"
+    >
+      <p class="character__row_p activeP">{{ children }}</p>
+    </div>
+  </div>
 
-  <span class="character__row" *ngIf="character.birthdate !== ' ' && character.birthdate !== ''">
+  <div 
+    *ngIf="character.birthdate !== ' ' && character.birthdate !== ''"
+    class="character__row" 
+  >
     <p class="character__row_title">birthdate:</p>
-    <p>{{ character.birthdate }}</p>
-  </span>
+    <p class="character__row_p">{{ character.birthdate }}</p>
+  </div>
 
-  <span class="character__row" *ngIf="character.name !== ' ' && character.name !== ''">
-    <p *ngIf="character.gender === 'male'" class="character__row_title">actor:</p>
-    <p *ngIf="character.gender !== 'male'" class="character__row_title">actress:</p>
-    <p>{{ character.name }}</p>
-  </span>
+  <div 
+    *ngIf="character.name !== ' ' && character.name !== ''"
+    class="character__row" 
+  >
+    <p 
+      *ngIf="character.gender === 'male'" 
+      class="character__row_title"
+    >
+      actor:
+    </p>
+    <p 
+      *ngIf="character.gender !== 'male'" 
+      class="character__row_title"
+    >
+      actress:
+    </p>
+    <p class="character__row_p">{{ character.name }}</p>
+  </div>
 </div>
