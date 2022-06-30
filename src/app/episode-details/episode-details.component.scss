@@ -1,0 +1,27 @@
+.episode {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &_d {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &_title {
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+    &_description {
+      text-align: justify;
+    }
+  }
+}

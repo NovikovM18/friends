@@ -1,0 +1,26 @@
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--text-main);
+  border-radius: 16px;
+  width: 224px;
+  padding: 16px 4px 4px;
+  cursor: pointer;
+
+  &__photo {
+    width: 196px;
+    height: 196px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}

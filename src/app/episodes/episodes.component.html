@@ -1,0 +1,68 @@
+<div class="num__list">
+  <div 
+    *ngFor="let num of seasons"
+    class="num__item"
+    [ngClass]="{'active': num == seasonNum}"
+    (click)="setSeason(num)"
+  >
+    <p>{{ num }}</p>
+  </div>
+</div>
+
+<div
+  *ngIf="season"
+  class="content"
+>  
+  <div class="season">
+    <span class="season__details">
+      <p class="season__details_title">on air</p>
+      <p>{{ season.air_date }} - {{ season.last_air_date }}</p>
+    </span>
+    
+    <span class="season__details">
+      <p class="season__details_title">description</p>
+      <p class="season__details_description">{{ season.description }}</p>  
+    </span>
+    
+    <span class="season__details">
+      <p class="season__details_title">number of episodes: {{ season.numberEpisodes }}</p>  
+    </span>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <p>NAME</p>
+        </th>
+
+        <th>
+          <p>NUMBER</p>
+        </th>
+        
+        <th>
+          <p>DATE</p>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="let episode of season.episodes"
+        [routerLink]="['/episodes', episode._id]"
+      >
+        <td>
+          <p>{{ episode.name }}</p>
+        </td>
+        
+        <td>
+          <p>{{ episode.number }}</p>
+        </td>
+        
+        <td>
+          <p>{{ episode.air_date }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

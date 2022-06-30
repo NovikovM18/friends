@@ -1,0 +1,14 @@
+<div class="list">
+  <div 
+    *ngFor="let character of characters"
+    class="item"
+    [routerLink]="['/characters', character._id]"
+  >
+    <img 
+      [src]=getSantizeUrl(character.image) 
+      alt="photo"
+      class="item__photo"
+    >
+    <p class="item__title">{{character.nameCharacter}}</p>
+  </div>
+</div>

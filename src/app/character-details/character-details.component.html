@@ -1,0 +1,50 @@
+<div 
+*ngIf="character"
+class="character"
+>
+  <span class="character__row">
+    <p class="character__row_title">{{ character.nameCharacter }}</p>
+  </span>
+
+  <img 
+    [src]=getSantizeUrl(character.image) 
+    alt="photo"
+    class="character__photo"
+  >
+
+  <span class="character__row" *ngIf="character.alias !== ' ' && character.alias !== ''">
+    <p class="character__row_title">alias:</p>
+    <p>{{ character.alias}}</p>
+  </span>
+
+  <span class="character__row" *ngIf="character.profession.length">
+    <p class="character__row_title">profession:</p>
+    <p>{{ character.profession.join(', ') }}</p>
+  </span>
+
+  <span class="character__row" *ngIf="character.couples.length">
+    <p class="character__row_title">couples:</p>
+    <p>{{ character.couples.join(', ') }}</p>
+  </span>
+
+  <span class="character__row" *ngIf="character.spouse !== ' ' && character.spouse !== ''">
+    <p class="character__row_title">spouse:</p>
+    <p>{{ character.spouse }}</p>
+  </span>
+  
+  <span class="character__row" *ngIf="character.children.length">
+    <p class="character__row_title">children:</p>
+    <p>{{ character.children.join(', ') }}</p>
+  </span>
+
+  <span class="character__row" *ngIf="character.birthdate !== ' ' && character.birthdate !== ''">
+    <p class="character__row_title">birthdate:</p>
+    <p>{{ character.birthdate }}</p>
+  </span>
+
+  <span class="character__row" *ngIf="character.name !== ' ' && character.name !== ''">
+    <p *ngIf="character.gender === 'male'" class="character__row_title">actor:</p>
+    <p *ngIf="character.gender !== 'male'" class="character__row_title">actress:</p>
+    <p>{{ character.name }}</p>
+  </span>
+</div>

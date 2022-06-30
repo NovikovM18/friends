@@ -1,0 +1,49 @@
+<div 
+  *ngIf="info"
+  class="info"
+>
+  <span class="info__row">
+    <p class="info__row_title">{{ info.name }}</p>
+  </span>
+
+  <span class="info__row">
+    <p class="info__row_title">on air:</p>
+    <p>{{ info.firstDate }} - {{ info.lastDate }}</p>
+  </span>
+  
+  <span class="info__row">
+    <p class="info__row_title">authors:</p>
+    <p>{{ info.authors }}</p>
+  </span>
+  
+  <span class="info__row">
+    <p class="info__row_title">origin:</p>
+    <p>{{ info.origin }}</p>
+  </span>
+  
+  <span class="info__row">
+    <p class="info__row_title">genre:</p>
+    <p>{{ info.genre }}</p>
+  </span>
+  
+  <span class="info__row">
+    <p class="info__row_title">language:</p>
+    <p>{{ info.language }}</p>
+  </span>
+  
+  <span class="info__row">
+    <p class="info__row_title">number of seasons:</p>
+    <p>{{ info.numberSeasons }}</p>
+  </span>
+  
+  <span class="info__row">
+    <p class="info__row_title">number of episodes:</p>
+    <p>{{ info.numberEpisodes }}</p>
+  </span>
+  
+  <img 
+    [src]="info.logo" 
+    alt="logo" 
+    class="info__logo"
+  >
+</div>

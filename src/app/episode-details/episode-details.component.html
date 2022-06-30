@@ -1,0 +1,21 @@
+<div 
+  *ngIf="episode"
+  class="episode"
+>
+<span class="episode__details">
+  <p class="episode__details_title">number:</p>
+  <p>{{ episode.number }}</p>
+</span>
+<span class="episode__details">
+  <p class="episode__details_title">air date:</p>
+  <p>{{ episode.air_date }}</p>
+</span>
+<span class="episode__details">
+  <p class="episode__details_title">episode name:</p>
+  <p>{{ episode.name }}</p>
+</span>
+  <span class="episode__details_d">
+    <p class="episode__details_title">description</p>
+    <p class="episode__details_description">{{ episode.description }}</p>  
+  </span>
+</div>
