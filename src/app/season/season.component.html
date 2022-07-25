@@ -1,11 +1,12 @@
 <div class="num__list">
   <div 
-    *ngFor="let num of seasons"
+    *ngFor="let number of seasons"
     class="num__item"
-    [ngClass]="{'active': num == seasonNum}"
-    (click)="setSeason(num)"
+    routerLinkActive="active"
+    [routerLink]="['/season', number]"
+    (click)="setSeason(number)"
   >
-    <p>{{ num }}</p>
+    <p>{{ number }}</p>
   </div>
 </div>
 
@@ -14,19 +15,24 @@
   class="content"
 >  
   <div class="season">
-    <span class="season__details">
+    <div class="season__details row">
+      <p class="season__details_title">season</p>
+      <p>{{ season.number }}</p>
+    </div>
+
+    <div class="season__details">
       <p class="season__details_title">on air</p>
       <p>{{ season.air_date }} - {{ season.last_air_date }}</p>
-    </span>
+    </div>
     
-    <span class="season__details">
+    <div class="season__details">
       <p class="season__details_title">description</p>
       <p class="season__details_description">{{ season.description }}</p>  
-    </span>
+    </div>
     
-    <span class="season__details">
+    <div class="season__details">
       <p class="season__details_title">number of episodes: {{ season.numberEpisodes }}</p>  
-    </span>
+    </div>
   </div>
   
   <table>
@@ -49,7 +55,7 @@
     <tbody>
       <tr
         *ngFor="let episode of season.episodes"
-        [routerLink]="['/episodes', episode._id]"
+        [routerLink]="['/episodes', episode.number]"
       >
         <td>
           <p>{{ episode.name }}</p>

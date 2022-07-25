@@ -1,31 +1,33 @@
 .nav {
-  margin: 20px 0;
-  padding: 0;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-    @media (max-width: 666px) {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    &__item {
-      display: flex;
-      font-size: 1.2rem;
-      background-color: rgb(98, 255, 0);
-      transition: 600ms;
-    }
-    &__item :hover{
-      transform: scale(1.12);
-      transition: 300ms;
-    }
-    &__item > a {
-      padding: 16px;
-      text-decoration: none;
-      color: var(--text-main);
-      letter-spacing: 8px;
-    }
+  &__list {
+    margin: 20px 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+      @media (max-width: 666px) {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+  }
+  &__item {
+    display: flex;
+    font-size: 1.2rem;
+    background-color: var(--second-color);
+    transition: 600ms;
+  }
+  &__item :hover{
+    transform: scale(1.12);
+    transition: 300ms;
+  }
+  &__item > a {
+    padding: 16px;
+    text-decoration: none;
+    color: var(--text-main);
+    letter-spacing: 8px;
+  }
 }
 .active {
   background-color: var(--main-color);

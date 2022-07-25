@@ -5,19 +5,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
-import { EpisodesComponent } from './episodes/episodes.component';
+import { SeasonComponent } from './season/season.component';
 import { MainComponent } from './main/main.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { EpisodeDetailsComponent } from './episode-details/episode-details.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharactersComponent,
-    EpisodesComponent,
+    SeasonComponent,
     MainComponent,
     CharacterDetailsComponent,
-    EpisodeDetailsComponent
+    EpisodeDetailsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

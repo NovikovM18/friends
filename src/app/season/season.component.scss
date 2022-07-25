@@ -60,6 +60,13 @@
     }
   }
 }
+.row {
+  flex-direction: row;
+  gap: 1rem;
+}
+.row > .season__details_title {
+  margin: 0;
+}
 
 table {
   margin: 0 auto;

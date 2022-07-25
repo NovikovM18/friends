@@ -16,11 +16,11 @@ export class EpisodeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    const id = routeParams.get('id');
+    const number = routeParams.get('number');
 
     this.http.get<any>(this.URL_episodes + '?limit=236')
     .subscribe((response) => {
-      this.episode = response.data.find((ep: { _id: string | null; }) => ep._id === id);
+      this.episode = response.data.find((ep: { number: string; }) => ep.number === number);
     });
   }
 

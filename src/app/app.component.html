@@ -1,23 +1,25 @@
-<ul class="nav">
-  <li 
-    routerLinkActive="active"  
-    class="nav__item"
-  >
-    <a routerLink="/main">MAIN</a>
-  </li>
-  <li 
-    routerLinkActive="active"  
-    class="nav__item"
-  >
-    <a routerLink="/characters">CHARACTERS</a>
-  </li>
-  <li 
-    routerLinkActive="active"  
-    class="nav__item"
-  >
-    <a routerLink="/episodes">EPISODES</a>
-  </li>
-</ul>
+<div class="nav">
+  <ul class="nav__list">
+    <li 
+      routerLinkActive="active"  
+      class="nav__item"
+    >
+      <a routerLink="/main">MAIN</a>
+    </li>
+    <li 
+      routerLinkActive="active"  
+      class="nav__item"
+    >
+      <a routerLink="/characters">CHARACTERS</a>
+    </li>
+    <li 
+      routerLinkActive="active"  
+      class="nav__item"
+    >
+      <a [routerLink]="['/season', 1]">EPISODES</a>
+    </li>
+  </ul>
+</div>
 
 <div class="container">
   <router-outlet>
